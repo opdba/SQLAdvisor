@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-# @Time    : 17-8-27 下午4:39
+# @Time    : 17-8-27 下午6:23
 # @Author  : Wang Chao
-
 from django.conf.urls import url
 
 from . import views
 
-app_name = 'analysis'
+app_name = 'dbsettings'
 urlpatterns = [
-    url(r'^$', views.analysis, name='analysis'),
+    url(r'^$', views.settings, name='dbsettings'),
 ]
