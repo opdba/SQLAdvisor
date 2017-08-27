@@ -5,5 +5,5 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def analysis():
-    return render('analysis.html')
+def analysis(request):
+    return render(request, 'analysis.html')
