@@ -7,3 +7,7 @@ from django.shortcuts import render
 
 def analysis(request):
     return render(request, 'analysis.html')
+
+
+def analysishis(request):
+    return render(request, 'analysis_his.html')

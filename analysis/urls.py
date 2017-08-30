@@ -9,4 +9,5 @@ from . import views
 app_name = 'analysis'
 urlpatterns = [
     url(r'^$', views.analysis, name='analysis'),
+    url(r'^his/', views.analysishis, name='dbhis'),
 ]
