@@ -19,7 +19,8 @@ def dbsettings(request):
             bet.user = User.objects.get(username="wangchao")
             bet.save()
 
-    return render(request, 'settings.html')
+    dbinfos = DBinfo.objects.all()
+    return render(request, 'settings.html',locals())
 
 
 def validate_item_name(request):

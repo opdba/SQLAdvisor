@@ -85,6 +85,7 @@
                     <col class="col-xs-1">
                     <col class="col-xs-1">
                     <col class="col-xs-1">
+                    <col class="col-xs-1">
                 </colgroup>
                 <thead>
                 <tr>
@@ -92,8 +93,9 @@
                     <th>数据库地址</th>
                     <th>端口</th>
                     <th>数据库名</th>
-                    <th>用户名</th>
+                    <th>数据库用户名</th>
                     <th>创建时间</th>
+                    <th>创建用户</th>
                     <th>操作</th>
                 </tr>
                 </thead>
@@ -107,6 +109,7 @@
                             <td>{{ dbinfo.db_name }}</td>
                             <td>{{ dbinfo.db_user }}</td>
                             <td>{{ dbinfo.create_time }}</td>
+                            <td>{{ dbinfo.user }}</td>
                             <td>
                                 <a href="javascript:;" class="edit-settings" data-setting="{{ dbinfo.id }}">编辑</a>&nbsp;&nbsp;
                                 <a href="javascript:;" class="del-settings" data-setting="{{ dbinfo.id }}">删除</a>
