@@ -15,12 +15,17 @@ def dbsettings(request):
         form = DBCreate(request.POST)
 
         if form.is_valid():
-            bet = form.save(commit=False)
-            bet.user = User.objects.get(username="wangchao")
-            bet.save()
+            # For some reason, you're re-instantiating the form after you check is_valid().
+            if not DBinfo.objects.filter(db_name=form.cleaned_data['db_name']):
+                bet = form.save(commit=False)
+                bet.user = User.objects.get(username="wangchao")
+                bet.save()
+                addif = 'yes'
+            else:
+                addif = 'no'
 
     dbinfos = DBinfo.objects.all()
-    return render(request, 'settings.html',locals())
+    return render(request, 'settings.html', locals())
 
 
 @login_required

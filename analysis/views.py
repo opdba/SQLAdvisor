@@ -2,12 +2,14 @@
 from __future__ import unicode_literals
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from dbinfo.models import DBinfo
 
 
 # Create your views here.
 @login_required
 def analysis(request):
-    return render(request, 'analysis.html')
+    dbinfos = DBinfo.objects.all()
+    return render(request, 'analysis.html', locals())
 
 
 @login_required

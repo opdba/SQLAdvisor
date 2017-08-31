@@ -64,6 +64,9 @@
                         <button type="submit" class="btn btn-default btn-success"><i
                                 class="glyphicon glyphicon-ok-sign"></i> 保 存
                         </button>
+                        {% if addif == 'no' %}
+                        <script>alert("数据库名称已经存")</script>
+                        {% endif %}
                         &nbsp;<button type="button" class="btn btn-default btn-default" id="clear">清 除</button>
                     </div>
                 </div>
