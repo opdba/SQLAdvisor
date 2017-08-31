@@ -16,10 +16,13 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic.base import RedirectView
+from django.contrib.auth import urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', RedirectView.as_view(url='/analysis/', permanent=False), name='index'),
     url(r'^analysis/', include('analysis.urls')),
-    url(r'^dbinfo/', include('dbinfo.urls')),
+    url(r'^dbsettings/', include('dbinfo.urls')),
+    url(r'^user/', include('django.contrib.auth.urls')),
+    url(r'^user/', include('django.contrib.auth.urls')),
 ]

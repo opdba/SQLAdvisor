@@ -7,5 +7,7 @@ from . import views
 
 app_name = 'dbsettings'
 urlpatterns = [
-    url(r'^$', views.settings, name='dbsettings'),
+    url(r'^$', views.dbsettings, name='dbsettings'),
+    url(r'^validate/item/name$', views.validate_item_name, name='dbsettings'),
+
 ]
