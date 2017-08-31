@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from .forms import DBCreate
 from .models import DBinfo
@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 
 
 # Create your views here.
-
+@login_required
 def dbsettings(request):
     if request.method == 'POST':
         form = DBCreate(request.POST)
@@ -23,6 +23,7 @@ def dbsettings(request):
     return render(request, 'settings.html',locals())
 
 
+@login_required
 def validate_item_name(request):
     if request.method == 'POST':
         valid = True
